@@ -4,7 +4,7 @@ import Home from "../views/Home.vue";
 import Calendar from "../views/Calendar.vue";
 import DayPlan from "../views/DayPlan.vue";
 import GoalList from "../views/GoalList.vue";
-import Profile from "../views/GoalList.vue";
+import Profile from "../views/Profile.vue";
 import CashRecord from "../views/CashRecord.vue";
 import Projects from "../views/Projects.vue";
 import Habits from "../views/Habits.vue";

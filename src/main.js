@@ -5,12 +5,22 @@ import store from "./store";
 import vuetify from "./plugins/vuetify";
 import "roboto-fontface/css/roboto/roboto-fontface.css";
 import "@mdi/font/css/materialdesignicons.css";
+import firebaseCfg from './config/firebase'
+import firebase from 'firebase'
 
-Vue.config.productionTip = false;
+Vue.config.productionTip = false
+
+firebase.initializeApp(firebaseCfg)
 
 new Vue({
   router,
   store,
   vuetify,
-  render: h => h(App)
-}).$mount("#app");
+  render: h => h(App),
+  created() {
+    let vm = this
+    firebase.auth().onAuthStateChanged(function(user) {
+      vm.$store.dispatch('stateChange', user)
+    });
+  }
+}).$mount('#app')
