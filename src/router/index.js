@@ -8,6 +8,8 @@ import Profile from "../views/Profile.vue";
 import CashRecord from "../views/CashRecord.vue";
 import Projects from "../views/Projects.vue";
 import Habits from "../views/Habits.vue";
+import SignIn from "../views/SignIn.vue";
+import SignUp from "../views/SignUp.vue";
 
 
 Vue.use(VueRouter);
@@ -52,6 +54,16 @@ const routes = [
     path: "/habits",
     name: "Habits",
     component: Habits
+  },
+  {
+    path: "/signIn",
+    name: "SignIn",
+    component: SignIn
+  },
+  {
+    path: "/signUp",
+    name: "SignUn",
+    component: SignUp
   },
 ];
 

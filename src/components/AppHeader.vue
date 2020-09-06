@@ -86,7 +86,7 @@ export default {
         }
       },
       isAuth() {
-        return true
+        return false
       }
     }
 };
