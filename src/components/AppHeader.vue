@@ -86,7 +86,7 @@ export default {
         }
       },
       isAuth() {
-        return false
+        return this.$store.getters.isAuth;
       }
     }
 };

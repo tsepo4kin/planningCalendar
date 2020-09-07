@@ -10,7 +10,7 @@ export default new Vuetify({
     },
     themes: {
       light: {
-        error: "#fff"
+        error: "#000"
       }
     }
   }
