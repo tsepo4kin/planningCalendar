@@ -2,7 +2,7 @@
   <div>
     <!-- search -->
 
-    <day-task v-for="task in tasks" :key='task.id' :title='taks.title' :time='task.time' :id='task.id' :tags='task.tags'></day-task>
+    <day-task v-for="task in tasks" :key='task.id' :title='task.title' :time='task.time' :id='task.id' :tags='task.tags'></day-task>
     
     <day-plan-form></day-plan-form>
   </div>
@@ -18,7 +18,7 @@ export default {
   },
   data: () => ({
     tasks: [{
-      id: this.generateId(),
+      id: 'qwdasfqwaf123451234',
       title: 'testTitle',
       time: '20:25',
       tags: ['Studing','Programming','DailyLife']

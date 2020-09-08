@@ -9,11 +9,11 @@
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
           <span class="timer ml-auto display-1">{{time}}</span>
-          <v-btn icon class="ml-3">
+          <v-btn icon class="ml-3" @click="deleteTaskById(id)">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
-        <v-card-subtitle>{{tags}}</v-card-subtitle>
+        <v-card-subtitle>{{tag}}</v-card-subtitle>
       </v-card>
     </v-col>
   </v-row>
@@ -33,6 +33,16 @@ export default {
     },
     tags: {
       required: true
+    }
+  },
+  computed: {
+    tag() {
+      return this.tags.join(', ')
+    }
+  },
+  methods: {
+    deleteTaskById(id) {
+      console.log(id)
     }
   }
 }
