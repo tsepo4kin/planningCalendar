@@ -10,6 +10,7 @@ import Projects from "../views/Projects.vue";
 import Habits from "../views/Habits.vue";
 import SignIn from "../views/SignIn.vue";
 import SignUp from "../views/SignUp.vue";
+import Store from '../store/index'
 
 
 Vue.use(VueRouter);
@@ -23,32 +24,38 @@ const routes = [
   {
     path: "/calendar",
     name: "Calendar",
-    component: Calendar
+    component: Calendar,
+    beforeEnter: AuthGuard
   },
   {
     path: "/dayPlan",
     name: "DayPlan",
-    component: DayPlan
+    component: DayPlan,
+    beforeEnter: AuthGuard
   },
   {
     path: "/goalList",
     name: "GoalList",
-    component: GoalList
+    component: GoalList,
+    beforeEnter: AuthGuard
   },
   {
     path: "/profile",
     name: "Profile",
-    component: Profile
+    component: Profile,
+    beforeEnter: AuthGuard
   },
   {
     path: "/cashRecord",
     name: "CashRecord",
-    component: CashRecord
+    component: CashRecord,
+    beforeEnter: AuthGuard
   },
   {
     path: "/projects",
     name: "Projects",
-    component: Projects
+    component: Projects,
+    beforeEnter: AuthGuard
   },
   {
     path: "/habits",
@@ -66,6 +73,14 @@ const routes = [
     component: SignUp
   },
 ];
+
+function AuthGuard(from, to, next) {
+  if(Store.getters.isAuth) {
+    next()
+  }else {
+    next('/signin')
+  }
+}
 
 const router = new VueRouter({
   mode: "history",
