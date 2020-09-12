@@ -1,15 +1,10 @@
 <template>
-  <v-col class="share-circle" outlined>
-    
-  </v-col>
+  <v-col class="share-circle" outlined></v-col>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

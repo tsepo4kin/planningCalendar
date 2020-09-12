@@ -10,15 +10,13 @@
             </v-btn>
           </v-card-title>
           <v-card-subtitle class="text-center d-block ml-4" style="width: 232px">Proj deadline</v-card-subtitle>
-          <v-card-text>
-            Proj descrption Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus odit dolor voluptatibus velit culpa.
-          </v-card-text>
+          <v-card-text>Proj descrption Lorem ipsum dolor sit amet consectetur adipisicing elit. Eligendi accusamus odit dolor voluptatibus velit culpa.</v-card-text>
           <v-btn class="mx-auto d-block">Open</v-btn>
         </v-card>
       </v-col>
       <v-col justify="center" align="center">
         <v-card class="deep-grey accent-4 pb-2" dark min-width="300" width="300" height="236">
-          <v-icon size='180' class="d-block pt-3">mdi-plus-circle</v-icon>
+          <v-icon size="180" class="d-block pt-3">mdi-plus-circle</v-icon>
         </v-card>
       </v-col>
     </v-row>
@@ -26,11 +24,8 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style>
-
 </style>

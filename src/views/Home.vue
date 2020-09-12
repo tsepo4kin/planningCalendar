@@ -2,7 +2,7 @@
   <div>
     <h1 class="text-center">About</h1>
     <v-card dark class="red darken-3 mt-2">
-      <v-card-title >Usage</v-card-title>
+      <v-card-title>Usage</v-card-title>
       <v-card-text>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates, tenetur facere culpa quia, optio, ipsa aspernatur facilis eius eos ipsum cum hic atque dolorum? Atque nobis expedita deleniti incidunt ad, et facilis ratione suscipit temporibus ipsam ducimus quidem nemo culpa laudantium necessitatibus. Fugiat dolor nostrum cupiditate nobis illo eveniet ratione suscipit, aspernatur magni delectus hic eum temporibus tenetur quidem animi, amet obcaecati, praesentium veniam vero repellendus? Obcaecati veniam voluptatum pariatur culpa tenetur, accusantium laudantium cupiditate iste nobis expedita, facilis non laborum eveniet commodi nulla. Eligendi fuga corrupti eveniet adipisci odio earum magnam odit perspiciatis eaque consequuntur, nostrum officiis! Asperiores praesentium, provident est perferendis accusantium suscipit error impedit neque deserunt? Omnis velit possimus sint laborum assumenda modi, nisi illum, asperiores enim obcaecati molestias at nesciunt nulla necessitatibus dicta harum tenetur provident in! Ipsa qui minus aliquam illum perspiciatis fugit quae voluptates amet et veritatis ipsum praesentium consequatur quod provident necessitatibus, exercitationem iste inventore quos recusandae sit maxime. Distinctio quae accusantium aliquid libero. Pariatur, iusto corporis quidem doloremque, consequuntur sit, quo vitae ipsam hic molestiae cumque laborum incidunt rem eos assumenda reprehenderit recusandae cum quaerat consectetur libero. Autem, magni numquam. Nemo unde quasi ullam minima necessitatibus inventore, repudiandae veniam facilis officiis sequi!</v-card-text>
     </v-card>
 
@@ -19,16 +19,14 @@
 export default {
   name: "Home",
   components: {},
-  data: () => ({
-
-  }),
+  data: () => ({}),
   computed: {
     // aboutInfo() {
     //   return [
     //     {
     //       title: 'Calendar',
     //       subtitle: '',
-    //       // icon/img 
+    //       // icon/img
     //     },
     //     {
     //       title: 'Day plan',
@@ -46,7 +44,6 @@ export default {
     //       title: 'Projects',
     //       subtitle: ''
     //     },
-
     //   ]
     // }
   }

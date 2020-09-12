@@ -6,5 +6,5 @@ export default {
   storageBucket: "planning-calendar-18723.appspot.com",
   messagingSenderId: "368767131024",
   appId: "1:368767131024:web:85a0a88cb85eac123ca715",
-  measurementId: "G-J4NBHQ84GP"
-}
+  measurementId: "G-J4NBHQ84GP",
+};

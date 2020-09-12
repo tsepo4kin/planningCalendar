@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import CalendarTable from '@/components/CalendarTable'
+import CalendarTable from "@/components/CalendarTable";
 export default {
   components: {
     CalendarTable

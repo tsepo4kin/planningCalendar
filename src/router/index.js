@@ -10,8 +10,7 @@ import Projects from "../views/Projects.vue";
 import Habits from "../views/Habits.vue";
 import SignIn from "../views/SignIn.vue";
 import SignUp from "../views/SignUp.vue";
-import Store from '../store/index'
-
+import Store from "../store/index";
 
 Vue.use(VueRouter);
 
@@ -19,73 +18,73 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home
+    component: Home,
   },
   {
     path: "/calendar",
     name: "Calendar",
     component: Calendar,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/dayPlan",
     name: "DayPlan",
     component: DayPlan,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/goalList",
     name: "GoalList",
     component: GoalList,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/profile",
     name: "Profile",
     component: Profile,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/cashRecord",
     name: "CashRecord",
     component: CashRecord,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/projects",
     name: "Projects",
     component: Projects,
-    beforeEnter: AuthGuard
+    beforeEnter: AuthGuard,
   },
   {
     path: "/habits",
     name: "Habits",
-    component: Habits
+    component: Habits,
   },
   {
     path: "/signIn",
     name: "SignIn",
-    component: SignIn
+    component: SignIn,
   },
   {
     path: "/signUp",
     name: "SignUn",
-    component: SignUp
+    component: SignUp,
   },
 ];
 
 function AuthGuard(from, to, next) {
-  if(Store.getters.isAuth) {
-    next()
-  }else {
-    next('/signin')
+  if (Store.getters.isAuth) {
+    next();
+  } else {
+    next("/signin");
   }
 }
 
 const router = new VueRouter({
   mode: "history",
   base: process.env.BASE_URL,
-  routes
+  routes,
 });
 
 export default router;

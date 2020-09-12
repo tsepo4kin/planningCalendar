@@ -32,7 +32,12 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn color="green darken-3" dark @click.prevent="signIn" :disabled="proccessing || !valid">Войти</v-btn>
+          <v-btn
+            color="green darken-3"
+            dark
+            @click.prevent="signIn"
+            :disabled="proccessing || !valid"
+          >Войти</v-btn>
         </v-card-actions>
       </v-card>
     </v-col>

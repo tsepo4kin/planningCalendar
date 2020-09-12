@@ -3,13 +3,13 @@
     <v-col>
       <v-card>
         <v-card-title>
-          <v-checkbox success class="mr-3"></v-checkbox>
-          {{title}}
+          <v-checkbox v-model="task.done" success class="mr-3"></v-checkbox>
+          {{task.title}}
           <v-btn icon class="ml-3">
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
-          <span class="timer ml-auto display-1">{{time}}</span>
-          <v-btn icon class="ml-3" @click="deleteTaskById(id)">
+          <span class="timer ml-auto display-1">{{task.time}}</span>
+          <v-btn icon class="ml-3" @click="deleteTaskById(task.id)">
             <v-icon>mdi-close</v-icon>
           </v-btn>
         </v-card-title>
@@ -22,32 +22,22 @@
 <script>
 export default {
   props: {
-    title: {
-      required: true
-    },
-    time: {
-      required: true
-    },
-    id: {
-      required: true
-    },
-    tags: {
+    task: {
       required: true
     }
   },
   computed: {
     tag() {
-      return this.tags.join(', ')
+      return this.task.tags.join(", ");
     }
   },
   methods: {
     deleteTaskById(id) {
-      console.log(id)
+      console.log(id);
     }
   }
-}
+};
 </script>
 
 <style>
-
 </style>

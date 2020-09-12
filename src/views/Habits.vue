@@ -9,8 +9,12 @@
               <v-icon>mdi-pencil</v-icon>
             </v-btn>
             <div class="ml-auto d-block">
-              <v-row><span class="total-days">0</span></v-row>
-              <v-row><span class="display-10">Total days</span></v-row>
+              <v-row>
+                <span class="total-days">0</span>
+              </v-row>
+              <v-row>
+                <span class="display-10">Total days</span>
+              </v-row>
             </div>
             <v-btn icon class="ml-3">
               <v-icon>mdi-close</v-icon>
@@ -24,7 +28,5 @@
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>

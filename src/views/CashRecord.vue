@@ -9,8 +9,8 @@
 </template>
 
 <script>
-import Investments from '@/components/Investments'
-import CashStats from '@/components/CashStats'
+import Investments from "@/components/Investments";
+import CashStats from "@/components/CashStats";
 export default {
   data: () => ({
     isBalance: true,
@@ -20,12 +20,9 @@ export default {
     CashStats,
     Investments
   },
-  computed: {
-    
-  }
-}
+  computed: {}
+};
 </script>
 
 <style>
-
 </style>

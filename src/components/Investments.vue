@@ -8,16 +8,15 @@
 </template>
 
 <script>
-import ShareTable from './ShareTable'
-import ShareCircle from './ShareCircle'
+import ShareTable from "./ShareTable";
+import ShareCircle from "./ShareCircle";
 export default {
   components: {
     ShareTable,
     ShareCircle
   }
-}
+};
 </script>
 
 <style>
-
 </style>
