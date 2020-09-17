@@ -17,16 +17,15 @@ export default {
     DayTask
   },
   data: () => ({
-    tasks: [
-      {
-        id: "qwdasfqwaf123451234",
-        title: "testTitle",
-        time: "20:25",
-        done: false,
-        tags: ["Studing", "Programming", "DailyLife"]
-      }
-    ]
+    
   }),
-  methods: {}
+  computed: {
+    tasks() {
+      return this.$store.getters.getTasks
+    }
+  },
+  methods: {
+
+  }
 };
 </script>

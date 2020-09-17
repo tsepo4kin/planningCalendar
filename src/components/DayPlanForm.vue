@@ -49,8 +49,8 @@ export default {
     addTask() {
       this.task.id = this.generateId();
       this.task.tags = this.tagsStrToTaskArr();
-      console.log(this.task)
-      this.$store.dispatch('addTask',this.task)
+      // console.log(this.task)
+      this.$store.dispatch('addTask', this.task)
     }
   }
 };

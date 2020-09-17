@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     deleteTaskById(id) {
-      console.log(id);
+      this.$store.dispatch('deleteTaskById', id)
     }
   }
 };
