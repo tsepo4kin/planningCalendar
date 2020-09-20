@@ -1,6 +1,5 @@
 <template>
   <div>
-    <v-btn @click="isBalance = !isBalance">Use Balance</v-btn>
     <v-btn @click="investments = !investments">{{investments ? 'Cash stats' : 'Investments'}}</v-btn>
 
     <investments v-if="investments"></investments>
@@ -13,8 +12,7 @@ import Investments from "@/components/Investments";
 import CashStats from "@/components/CashStats";
 export default {
   data: () => ({
-    isBalance: true,
-    investments: true
+    investments: false
   }),
   components: {
     CashStats,
