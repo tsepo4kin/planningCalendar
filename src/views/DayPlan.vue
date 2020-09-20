@@ -16,16 +16,15 @@ export default {
     DayPlanForm,
     DayTask
   },
-  data: () => ({
-    
-  }),
+  data: () => ({}),
   computed: {
     tasks() {
-      return this.$store.getters.getTasks
+      return this.$store.getters.getTasks;
     }
   },
-  methods: {
-
-  }
+  created() {
+    this.$store.dispatch("setTasks");
+  },
+  methods: {}
 };
 </script>

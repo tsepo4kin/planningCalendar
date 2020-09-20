@@ -30,7 +30,7 @@ export default {
         tags: ["daily", "resp"],
       },
     ],
-    isLocal: false,
+    isLocal: true,
   },
   mutations: {
     setTasks(state, payload) {
@@ -41,23 +41,22 @@ export default {
     },
     deleteTask(state, payload) {
       state.tasks = state.tasks.filter((e) => e.id !== payload);
-      console.log(state.tasks)
     },
     addTask(state, payload) {
       state.tasks.push(payload);
     },
   },
   actions: {
-    saveTasks({ commit }, state) {
-      if (commit("getSaveSettings")) {
-        localStorage.setItem('tasks', state.tasks);
+    saveTasks({ state }) {
+      if (state.isLocal) {
+        localStorage.setItem("tasks", JSON.stringify(state.tasks));
       } else {
         //save in database
       }
     },
-    setTasks({ commit }) {
-      if (commit("getSaveSettings")) {
-        commit("setTasks", localStorage.getItem("tasks"));
+    setTasks({ commit, state }) {
+      if (state.isLocal) {
+        commit("setTasks", JSON.parse(localStorage.getItem("tasks")));
       } else {
         //set from database
       }
@@ -65,8 +64,8 @@ export default {
     addTask({ commit }, payload) {
       commit("addTask", payload);
     },
-    deleteTaskById({commit}, payload) {
-      commit("deleteTask", payload)
+    deleteTaskById({ commit }, payload) {
+      commit("deleteTask", payload);
     },
     localToggle({ commit }) {
       commit("localToggle");
