@@ -28,9 +28,6 @@ export default {
     }
   },
   actions: {
-    localToggle({commit}) {
-      commit('localToggle')
-    },
     setIncome({commit, state}) {
       if(state.isLocal) {
         commit('setIncome', localStorage)

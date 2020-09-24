@@ -45,6 +45,11 @@
 
 <script>
 export default {
+  props: {
+    form: {
+      required: true
+    }
+  },
   data: () => ({
     rules: {
       required: value => !!value,

@@ -6,7 +6,7 @@
         <v-card class="primary lighten-2 mx-auto">
           <v-card-title class="text-center d-block">1000</v-card-title>
           <v-card-subtitle class="text-center">Income</v-card-subtitle>
-          <stats-table></stats-table>
+          <stats-table :form="'Income'"></stats-table>
         </v-card>
       </v-col>
 
@@ -14,7 +14,7 @@
         <v-card class="red accent-2 mx-auto">
           <v-card-title class="text-center d-block">1000</v-card-title>
           <v-card-subtitle class="text-center">Outcome</v-card-subtitle>
-          <stats-table></stats-table>
+          <stats-table :form="'Outcome'"></stats-table>
         </v-card>
       </v-col>
 
