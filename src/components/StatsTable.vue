@@ -6,10 +6,15 @@
       :headers="headers"
       :items="tableData"
       :item-key="tableData.id"
-      v-model='selected'
-      show-select
-      single-select
     >
+      <template v-slot:item.actions="{ item }">
+        <v-icon small class="mr-2" @click="editItem(item)">
+          mdi-pencil
+        </v-icon>
+        <v-icon small @click="deleteById(item.id)">
+          mdi-delete
+        </v-icon>
+      </template>
     </v-data-table>
 
     <h3 class="text-center">Input you value</h3>
@@ -47,53 +52,41 @@
 export default {
   props: {
     form: {
+      required: true,
+    },
+    tableData: {
       required: true
     }
   },
+  // mounted() {
+  //   if(this.form == 'Income') {
+  //     this.$store.dispatch('setIncome')
+  //   } else {
+  //     this.$store.dispatch('setOutcome')
+  //   }
+  // },
   data: () => ({
     rules: {
-      required: value => !!value,
-      string: value => {
+      required: (value) => !!value,
+      string: (value) => {
         const pattern = /[a-zA-Z0-9]/;
         return pattern.test(value) || "Not string";
       },
-      number: value => {
+      number: (value) => {
         const pattern = /[0-9]/;
         return pattern.test(value) || "Not number";
       },
-      counter: value => value.length > 4
+      counter: (value) => value.length > 4,
     },
-
-    selected: [],
 
     categoryName: null,
     value: null,
     totalMoney: null,
     headers: [
       { text: "Category name", value: "name", align: "center" },
-      { text: "Category value", value: "value", align: "center" }
+      { text: "Category value", value: "value", align: "center" },
+      { text: "Actions", value: "actions", align: "center", sortable: false },
     ],
-    tableData: [
-      {
-        name: "test1",
-        value: 100,
-        id: "qwe123"
-      },
-      {
-        name: "test2",
-        value: 400,
-        id: "qwasf3"
-      },
-      {
-        name: "test3",
-        value: 300,
-        id: "qasv123"
-      },{
-        name: "test4",
-        value: 200,
-        id: "qwasdvz23"
-      }
-    ]
   }),
   methods: {
     addTableData() {
@@ -101,10 +94,10 @@ export default {
         this.tableData.push({
           name: this.categoryName,
           value: this.value,
-          id: this.generateId()
+          id: this.generateId(),
         });
       }
-      console.log(this.selected)
+      console.log(this.selected);
       this.categoryName = null;
       this.value = null;
       // updateSate
@@ -118,17 +111,14 @@ export default {
         res += str[Math.round(Math.random() * str.length)];
       }
       return res;
-    }
-  },
-  props: {
-    data: {
-      type: Object
-      // required: true
     },
-    type: {
-      type: String
-      // required: true
-    }
+    deleteById(id) {
+      if (this.form == "Income") {
+        this.$store.dispatch("deleteIncome", id);
+      } else {
+        this.$store.dispatch("deleteOutcome", id);
+      }
+    },
   }
 };
 </script>

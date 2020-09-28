@@ -1,10 +1,48 @@
 export default {
   state: {
     incomeCategories: [
-
+      {
+        name: "Incometest1",
+        value: 100,
+        id: "qwe123",
+      },
+      {
+        name: "Incometest2",
+        value: 400,
+        id: "qwasf3",
+      },
+      {
+        name: "Incometest3",
+        value: 300,
+        id: "qasv123",
+      },
+      {
+        name: "Incometest4",
+        value: 200,
+        id: "qwasdvz23",
+      },
     ],
     outcomeCategories: [
-
+      {
+        name: "Outcometest1",
+        value: 100,
+        id: "qwe123",
+      },
+      {
+        name: "Outcometest2",
+        value: 400,
+        id: "qwasf3",
+      },
+      {
+        name: "Outcometest3",
+        value: 300,
+        id: "qasv123",
+      },
+      {
+        name: "Outcometest4",
+        value: 200,
+        id: "qwasdvz23",
+      },
     ],
   },
   mutations: {
