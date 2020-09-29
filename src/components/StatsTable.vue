@@ -55,16 +55,9 @@ export default {
       required: true,
     },
     tableData: {
-      required: true
-    }
+      required: true,
+    },
   },
-  // mounted() {
-  //   if(this.form == 'Income') {
-  //     this.$store.dispatch('setIncome')
-  //   } else {
-  //     this.$store.dispatch('setOutcome')
-  //   }
-  // },
   data: () => ({
     rules: {
       required: (value) => !!value,
@@ -91,17 +84,26 @@ export default {
   methods: {
     addTableData() {
       if (this.value && this.categoryName) {
-        this.tableData.push({
-          name: this.categoryName,
-          value: this.value,
-          id: this.generateId(),
-        });
+        if (this.form == "Income") {
+          this.$store.dispatch("addIncome", {
+            name: this.categoryName,
+            value: parseInt(this.value),
+            id: this.generateId(),
+          });
+          this.$store.dispatch("saveIncome");
+        } else {
+          this.$store.dispatch("addOutcome", {
+            name: this.categoryName,
+            value: parseInt(this.value),
+            id: this.generateId(),
+          });
+          this.$store.dispatch("saveOutcome");
+        }
       }
-      console.log(this.selected);
       this.categoryName = null;
       this.value = null;
-      // updateSate
     },
+
     generateId() {
       const str =
         "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
@@ -112,13 +114,16 @@ export default {
       }
       return res;
     },
+    
     deleteById(id) {
       if (this.form == "Income") {
         this.$store.dispatch("deleteIncome", id);
+        this.$store.dispatch("saveIncome");
       } else {
         this.$store.dispatch("deleteOutcome", id);
+        this.$store.dispatch("saveOutcome");
       }
     },
-  }
+  },
 };
 </script>
