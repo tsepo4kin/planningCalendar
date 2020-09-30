@@ -52,24 +52,24 @@
 export default {
   props: {
     form: {
-      required: true,
+      required: true
     },
     tableData: {
-      required: true,
-    },
+      required: true
+    }
   },
   data: () => ({
     rules: {
-      required: (value) => !!value,
-      string: (value) => {
+      required: value => !!value,
+      string: value => {
         const pattern = /[a-zA-Z0-9]/;
         return pattern.test(value) || "Not string";
       },
-      number: (value) => {
+      number: value => {
         const pattern = /[0-9]/;
         return pattern.test(value) || "Not number";
       },
-      counter: (value) => value.length > 4,
+      counter: value => value.length > 4
     },
 
     categoryName: null,
@@ -78,8 +78,8 @@ export default {
     headers: [
       { text: "Category name", value: "name", align: "center" },
       { text: "Category value", value: "value", align: "center" },
-      { text: "Actions", value: "actions", align: "center", sortable: false },
-    ],
+      { text: "Actions", value: "actions", align: "center", sortable: false }
+    ]
   }),
   methods: {
     addTableData() {
@@ -88,14 +88,14 @@ export default {
           this.$store.dispatch("addIncome", {
             name: this.categoryName,
             value: parseInt(this.value),
-            id: this.generateId(),
+            id: this.generateId()
           });
           this.$store.dispatch("saveIncome");
         } else {
           this.$store.dispatch("addOutcome", {
             name: this.categoryName,
             value: parseInt(this.value),
-            id: this.generateId(),
+            id: this.generateId()
           });
           this.$store.dispatch("saveOutcome");
         }
@@ -114,7 +114,7 @@ export default {
       }
       return res;
     },
-    
+
     deleteById(id) {
       if (this.form == "Income") {
         this.$store.dispatch("deleteIncome", id);
@@ -123,7 +123,7 @@ export default {
         this.$store.dispatch("deleteOutcome", id);
         this.$store.dispatch("saveOutcome");
       }
-    },
-  },
+    }
+  }
 };
 </script>
