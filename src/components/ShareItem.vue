@@ -21,6 +21,11 @@
 
 <script>
 export default {
+  props: {
+    fieldsValue: {
+      required: true
+    }
+  },
   data: () => ({
     textFields: [
       { placeholder: "Name", size: 2 },
@@ -28,19 +33,13 @@ export default {
       { placeholder: "Price", size: 2 },
       { placeholder: "Amnt", size: 2 },
       { placeholder: "Total", size: 2 }
-    ],
-    fieldsValue: {
-      name: null,
-      ticker: null,
-      price: null,
-      anmt: null,
-      total: null,
-      id: "123asfcvbs123dsb35423q4r"
-    }
+    ]
   }),
   computed: {},
   methods: {
-    deleteShareById() {}
+    deleteShareById() {
+      console.log(this.fieldsValue.id);
+    }
   }
 };
 </script>
