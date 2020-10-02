@@ -16,6 +16,9 @@
     <v-btn icon @click="deleteShareById">
       <v-icon>mdi-close</v-icon>
     </v-btn>
+    <v-btn icon @click="saveShareItem">
+      <v-icon>mdi-check</v-icon>
+    </v-btn>
   </v-row>
 </template>
 
@@ -38,7 +41,11 @@ export default {
   computed: {},
   methods: {
     deleteShareById() {
-      console.log(this.fieldsValue.id);
+      this.$store.dispatch("deleteShareItemById", this.fieldsValue.id);
+      this.$store.dispatch("saveShareItems");
+    },
+    saveShareItem() {
+      this.$store.dispatch("saveShareItems");
     }
   }
 };

@@ -20,12 +20,12 @@ export default {
   components: {
     ShareItem
   },
-  data: () => ({
-    shareItems: []
-  }),
+  created() {
+    this.$store.dispatch("setShareItems");
+  },
   methods: {
     addShare() {
-      this.shareItems.push({
+      this.$store.dispatch("addShareItem", {
         name: null,
         ticker: null,
         price: null,
@@ -43,6 +43,11 @@ export default {
         res += str[Math.round(Math.random() * str.length)];
       }
       return res;
+    }
+  },
+  computed: {
+    shareItems() {
+      return this.$store.getters.getShareItems;
     }
   }
 };

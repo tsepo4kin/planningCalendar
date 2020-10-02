@@ -4,6 +4,7 @@ import GeneralModule from "./general";
 import UserModule from "./user";
 import DayPlanModule from "./dayPlan";
 import CashRecordModule from "./cashRecord";
+import InvestmentsModule from "./investments";
 
 Vue.use(Vuex);
 
@@ -13,5 +14,6 @@ export default new Vuex.Store({
     UserModule,
     DayPlanModule,
     CashRecordModule,
+    InvestmentsModule,
   },
 });
