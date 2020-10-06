@@ -1,8 +1,13 @@
 export default {
   state: {
     projects: [
-      
-    ]
+      {
+        title: "test",
+        subtitle: "test",
+        description: "testtest",
+        id: "qwe",
+      },
+    ],
   },
   mutations: {
     setProjects(state, payload) {
@@ -18,26 +23,28 @@ export default {
   actions: {
     saveProjects({ state }) {
       if (state.isLocal) {
-        localStorage.setItem("projects", JSON.stringify(state.projects));
+        // localStorage.setItem("projects", JSON.stringify(state.projects));
       } else {
         //save in database
       }
+      localStorage.setItem("projects", JSON.stringify(state.projects));
     },
-    setProject({ commit, state }) {
+    setProjects({ commit, state }) {
       if (state.isLocal) {
-        commit("setProjects", JSON.parse(localStorage.getItem("projects")));
+        // commit("setProjects", JSON.parse(localStorage.getItem("projects")));
       } else {
         //set from database
       }
+      commit("setProjects", JSON.parse(localStorage.getItem("projects")));
     },
-    addTask({ commit }, payload) {
+    addProject({ commit }, payload) {
       commit("addProject", payload);
     },
     deleteProjectById({ commit }, payload) {
       commit("deleteProject", payload);
-    }
+    },
   },
   getters: {
-    getTasks: (state) => state.projects
+    getProjects: (state) => state.projects,
   },
 };
