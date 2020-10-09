@@ -7,7 +7,7 @@ export default {
   },
   mutations: {
     setHabits(state, payload) {
-      state.habits = habits;
+      state.habits = payload;
     },
     deleteHabit(state, payload) {
       state.habits = state.habits.filter((e) => e.id !== payload);
