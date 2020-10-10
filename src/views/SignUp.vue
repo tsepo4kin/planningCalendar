@@ -5,7 +5,7 @@
         <v-toolbar color="green darken-3" dark>
           <v-toolbar-title>Регистрация</v-toolbar-title>
         </v-toolbar>
-        <v-alert :value="error" type="warning">{{error}}</v-alert>
+        <v-alert :value="error" type="warning">{{ error }}</v-alert>
         <v-card-text>
           <v-form v-model="valid">
             <v-text-field
@@ -38,7 +38,8 @@
             dark
             @click.prevent="signUp"
             :disabled="proccessing || !valid"
-          >Зарегистрироваться</v-btn>
+            >Зарегистрироваться</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-col>

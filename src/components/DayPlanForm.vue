@@ -45,9 +45,9 @@ export default {
       done: false,
       time: null,
       id: null,
-      tags: null,
+      tags: null
     },
-    tagsStr: null,
+    tagsStr: null
   }),
   computed: {},
   methods: {
@@ -70,17 +70,17 @@ export default {
 
       this.$store.dispatch("addTask", this.task);
       this.$store.dispatch("saveTasks");
-      
+
       this.task = {
         title: null,
         done: false,
         time: null,
         id: null,
-        tags: null,
+        tags: null
       };
       this.tagsStr = null;
-    },
-  },
+    }
+  }
 };
 </script>
 

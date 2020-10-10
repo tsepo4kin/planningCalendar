@@ -27,13 +27,13 @@
 import ProjectItem from "@/components/ProjectItem";
 export default {
   components: {
-    ProjectItem,
+    ProjectItem
   },
   data: () => ({}),
   computed: {
     projects() {
       return this.$store.getters.getProjects;
-    },
+    }
   },
   created() {
     this.$store.dispatch("setProjects");
@@ -44,7 +44,7 @@ export default {
         title: null,
         subtitle: null,
         description: null,
-        id: this.generateId(),
+        id: this.generateId()
       });
       this.$store.dispatch("saveProjects");
     },
@@ -57,8 +57,8 @@ export default {
         res += str[Math.round(Math.random() * str.length)];
       }
       return res;
-    },
-  },
+    }
+  }
 };
 </script>
 

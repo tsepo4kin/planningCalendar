@@ -22,15 +22,15 @@
 export default {
   props: {
     project: {
-      require: true,
-    },
+      require: true
+    }
   },
   methods: {
     deleteItem() {
       this.$store.dispatch("deleteProjectById", this.project.id);
       this.$store.dispatch("saveProjects");
-    },
-  },
+    }
+  }
 };
 </script>
 

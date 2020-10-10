@@ -13,8 +13,8 @@
 
       <v-toolbar-items>
         <v-btn text v-for="item in menuItems" :key="item.title" :to="item.path">
-          <v-icon left>{{item.icon}}</v-icon>
-          {{item.title}}
+          <v-icon left>{{ item.icon }}</v-icon>
+          {{ item.title }}
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>

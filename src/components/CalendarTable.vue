@@ -8,10 +8,18 @@
         v-for="i in 52"
         :key="i + 'weekHead'"
       >
-        <span class="d-block" style="margin: 1px; font-size: 12px; width: 15px; height: 15px;">{{i}}</span>
+        <span
+          class="d-block"
+          style="margin: 1px; font-size: 12px; width: 15px; height: 15px;"
+          >{{ i }}</span
+        >
       </v-col>
     </v-row>
-    <calendar-year-in-week :year="i" v-for="i in 80" :key="i + 'year'"></calendar-year-in-week>
+    <calendar-year-in-week
+      :year="i"
+      v-for="i in 80"
+      :key="i + 'year'"
+    ></calendar-year-in-week>
   </div>
 </template>
 
@@ -25,5 +33,4 @@ export default {
 };
 </script>
 
-<style>
-</style>
+<style></style>

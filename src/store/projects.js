@@ -5,20 +5,20 @@ export default {
         title: "test",
         subtitle: "test",
         description: "testtest",
-        id: "qwe",
-      },
-    ],
+        id: "qwe"
+      }
+    ]
   },
   mutations: {
     setProjects(state, payload) {
       state.projects = payload;
     },
     deleteProject(state, payload) {
-      state.projects = state.projects.filter((e) => e.id !== payload);
+      state.projects = state.projects.filter(e => e.id !== payload);
     },
     addProject(state, payload) {
       state.projects.push(payload);
-    },
+    }
   },
   actions: {
     saveProjects({ state }) {
@@ -42,9 +42,9 @@ export default {
     },
     deleteProjectById({ commit }, payload) {
       commit("deleteProject", payload);
-    },
+    }
   },
   getters: {
-    getProjects: (state) => state.projects,
-  },
+    getProjects: state => state.projects
+  }
 };

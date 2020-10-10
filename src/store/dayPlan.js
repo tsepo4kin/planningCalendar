@@ -6,31 +6,31 @@ export default {
         done: false,
         time: "12:15",
         id: "12fAfagI",
-        tags: ["daily", "prog"],
+        tags: ["daily", "prog"]
       },
       {
         title: "test2",
         done: false,
         time: "15:20",
         id: "12bjhjLK",
-        tags: ["eng", "stud"],
+        tags: ["eng", "stud"]
       },
       {
         title: "test3",
         done: false,
         time: "18:00",
         id: "asvbJLA1",
-        tags: ["daily", "fun"],
+        tags: ["daily", "fun"]
       },
       {
         title: "test4",
         done: false,
         time: "21:55",
         id: "QZXCb12k",
-        tags: ["daily", "resp"],
-      },
+        tags: ["daily", "resp"]
+      }
     ],
-    isLocal: true,
+    isLocal: true
   },
   mutations: {
     setTasks(state, payload) {
@@ -40,11 +40,11 @@ export default {
       state.isLocal = !state.isLocal;
     },
     deleteTask(state, payload) {
-      state.tasks = state.tasks.filter((e) => e.id !== payload);
+      state.tasks = state.tasks.filter(e => e.id !== payload);
     },
     addTask(state, payload) {
       state.tasks.push(payload);
-    },
+    }
   },
   actions: {
     saveTasks({ state }) {
@@ -69,10 +69,10 @@ export default {
     },
     localToggle({ commit }) {
       commit("localToggle");
-    },
+    }
   },
   getters: {
-    getTasks: (state) => state.tasks,
-    getSaveSettings: (state) => state.isLocal,
-  },
+    getTasks: state => state.tasks,
+    getSaveSettings: state => state.isLocal
+  }
 };

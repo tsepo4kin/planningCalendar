@@ -5,18 +5,20 @@
         <v-btn @click.prevent="openGoal()" icon class="mr-auto">
           <v-icon>mdi-border-color</v-icon>
         </v-btn>
-        {{goal.title}}
+        {{ goal.title }}
         <v-btn @click.prevent="deleteGoal()" icon class="ml-auto">
           <v-icon>mdi-close</v-icon>
         </v-btn>
       </v-card-title>
-      <v-card-subtitle>{{goal.date}}</v-card-subtitle>
+      <v-card-subtitle>{{ goal.date }}</v-card-subtitle>
       <ul style="padding-right: 24px">
         <li
           style="list-style-type: none"
           v-for="(goalPoint, i) in goal.goalPoints"
           :key="i + 'goalPoint'"
-        >{{goalPoint}}</li>
+        >
+          {{ goalPoint }}
+        </li>
       </ul>
     </v-card>
   </v-col>
@@ -40,5 +42,4 @@ export default {
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

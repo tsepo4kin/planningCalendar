@@ -1,17 +1,17 @@
 export default {
   state: {
-    shareItems: [],
+    shareItems: []
   },
   mutations: {
     setShareItems(state, payload) {
       state.shareItems = payload;
     },
     deleteShareItem(state, payload) {
-      state.shareItems = state.shareItems.filter((e) => e.id !== payload);
+      state.shareItems = state.shareItems.filter(e => e.id !== payload);
     },
     addShareItem(state, payload) {
       state.shareItems.push(payload);
-    },
+    }
   },
   actions: {
     saveShareItems({ state }) {
@@ -35,9 +35,9 @@ export default {
     },
     deleteShareItemById({ commit }, payload) {
       commit("deleteShareItem", payload);
-    },
+    }
   },
   getters: {
-    getShareItems: (state) => state.shareItems,
-  },
+    getShareItems: state => state.shareItems
+  }
 };

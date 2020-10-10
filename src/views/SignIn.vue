@@ -5,7 +5,7 @@
         <v-toolbar color="green darken-3" dark flat>
           <v-toolbar-title>Вход</v-toolbar-title>
         </v-toolbar>
-        <v-alert :value="error" type="warning">{{error}}</v-alert>
+        <v-alert :value="error" type="warning">{{ error }}</v-alert>
         <v-card-text>
           <v-form v-model="valid">
             <v-text-field
@@ -37,7 +37,8 @@
             dark
             @click.prevent="signIn"
             :disabled="proccessing || !valid"
-          >Войти</v-btn>
+            >Войти</v-btn
+          >
         </v-card-actions>
       </v-card>
     </v-col>

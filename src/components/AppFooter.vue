@@ -4,25 +4,40 @@
       <v-row>
         <v-col>
           <v-card class="green">
-            <v-card-title class="text-subtitle-2 text-center d-block">Socials</v-card-title>
+            <v-card-title class="text-subtitle-2 text-center d-block"
+              >Socials</v-card-title
+            >
 
-            <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, minus!</v-card-text>
+            <v-card-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+              minus!</v-card-text
+            >
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="green">
-            <v-card-title class="text-subtitle-2 text-center d-block">Info</v-card-title>
+            <v-card-title class="text-subtitle-2 text-center d-block"
+              >Info</v-card-title
+            >
 
-            <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, minus!</v-card-text>
+            <v-card-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+              minus!</v-card-text
+            >
           </v-card>
         </v-col>
 
         <v-col>
           <v-card class="green">
-            <v-card-title class="text-subtitle-2 text-center d-block">Lorem</v-card-title>
+            <v-card-title class="text-subtitle-2 text-center d-block"
+              >Lorem</v-card-title
+            >
 
-            <v-card-text>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, minus!</v-card-text>
+            <v-card-text
+              >Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam,
+              minus!</v-card-text
+            >
           </v-card>
         </v-col>
       </v-row>

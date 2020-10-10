@@ -1,7 +1,7 @@
 export default {
   state: {
     processing: false,
-    error: null,
+    error: null
   },
   mutations: {
     SetProcessing(state, payload) {
@@ -12,11 +12,11 @@ export default {
     },
     ClearError(state) {
       state.error = null;
-    },
+    }
   },
   actions: {},
   getters: {
-    getError: (state) => state.error,
-    getProcessing: (state) => state.processing,
-  },
+    getError: state => state.error,
+    getProcessing: state => state.processing
+  }
 };

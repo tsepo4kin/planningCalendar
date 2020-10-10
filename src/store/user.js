@@ -3,8 +3,8 @@ export default {
   state: {
     user: {
       isAuth: false,
-      uid: null,
-    },
+      uid: null
+    }
   },
   mutations: {
     SetUser(state, payload) {
@@ -12,7 +12,7 @@ export default {
     },
     UnsetUser(state) {
       (state.user.isAuth = false), (state.user.uid = null);
-    },
+    }
   },
   actions: {
     signUp({ commit }, payload) {
@@ -25,7 +25,7 @@ export default {
         .then(() => {
           commit("SetProcessing", false);
         })
-        .catch((e) => {
+        .catch(e => {
           commit("SetProcessing", false);
           commit("SetError", e.message);
         });
@@ -43,7 +43,7 @@ export default {
         .then(() => {
           commit("SetProcessing", false);
         })
-        .catch((e) => {
+        .catch(e => {
           commit("SetProcessing", false);
           commit("SetError", e.message);
         });
@@ -54,9 +54,9 @@ export default {
       } else {
         commit("UnsetUser");
       }
-    },
+    }
   },
   getters: {
-    isAuth: (state) => state.user.isAuth,
-  },
+    isAuth: state => state.user.isAuth
+  }
 };

@@ -23,20 +23,20 @@
 export default {
   props: {
     task: {
-      required: true,
-    },
+      required: true
+    }
   },
   computed: {
     tag() {
       return this.task.tags.join(", ");
-    },
+    }
   },
   methods: {
     deleteTaskById(id) {
       this.$store.dispatch("deleteTaskById", id);
       this.$store.dispatch("saveTasks");
-    },
-  },
+    }
+  }
 };
 </script>
 

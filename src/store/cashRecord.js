@@ -4,56 +4,54 @@ export default {
       {
         name: "Incometest1",
         value: 100,
-        id: "qwe123",
+        id: "qwe123"
       },
       {
         name: "Incometest2",
         value: 400,
-        id: "qwasf3",
+        id: "qwasf3"
       },
       {
         name: "Incometest3",
         value: 300,
-        id: "qasv123",
+        id: "qasv123"
       },
       {
         name: "Incometest4",
         value: 200,
-        id: "qwasdvz23",
-      },
+        id: "qwasdvz23"
+      }
     ],
     outcomeCategories: [
       {
         name: "Outcometest1",
         value: 100,
-        id: "qwe123",
+        id: "qwe123"
       },
       {
         name: "Outcometest2",
         value: 400,
-        id: "qwasf3",
+        id: "qwasf3"
       },
       {
         name: "Outcometest3",
         value: 300,
-        id: "qasv123",
+        id: "qasv123"
       },
       {
         name: "Outcometest4",
         value: 200,
-        id: "qwasdvz23",
-      },
-    ],
+        id: "qwasdvz23"
+      }
+    ]
   },
   mutations: {
     deleteIncomeById(state, id) {
-      state.incomeCategories = state.incomeCategories.filter(
-        (e) => e.id !== id
-      );
+      state.incomeCategories = state.incomeCategories.filter(e => e.id !== id);
     },
     deleteOutcomeById(state, id) {
       state.outcomeCategories = state.outcomeCategories.filter(
-        (e) => e.id !== id
+        e => e.id !== id
       );
     },
     setIncome(state, payload) {
@@ -67,7 +65,7 @@ export default {
     },
     addOutcome(state, payload) {
       state.outcomeCategories.push(payload);
-    },
+    }
   },
   actions: {
     setIncome({ commit, state }) {
@@ -113,10 +111,10 @@ export default {
     },
     deleteOutcome({ commit }, id) {
       commit("deleteOutcomeById", id);
-    },
+    }
   },
   getters: {
-    getIncome: (state) => state.incomeCategories,
-    getOutcome: (state) => state.outcomeCategories,
-  },
+    getIncome: state => state.incomeCategories,
+    getOutcome: state => state.outcomeCategories
+  }
 };
