@@ -44,6 +44,14 @@ export default {
     },
     addTask(state, payload) {
       state.tasks.push(payload);
+    },
+    editTask(state, payload) {
+      state.tasks = state.tasks.map( e => {
+        if(e.id == payload.id) {
+          e = payload
+        } 
+        return e
+      })
     }
   },
   actions: {
@@ -69,6 +77,9 @@ export default {
     },
     localToggle({ commit }) {
       commit("localToggle");
+    },
+    editTaskById({commit}, payload) {
+      commit('editTask', payload)
     }
   },
   getters: {
