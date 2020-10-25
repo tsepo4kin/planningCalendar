@@ -2,7 +2,7 @@
   <div class="investments component">
     <v-row>
       <share-table></share-table>
-      <v-col class="pb-2">
+      <v-col class="pb-2" lg="6">
         <pie-chart :chartData="dataChart"></pie-chart>
       </v-col>
     </v-row>
@@ -11,7 +11,7 @@
 
 <script>
 import ShareTable from "./ShareTable";
-import PieChart from "./LineChart";
+import PieChart from "./PieChart";
 export default {
   data: () => ({
     dataChart: {
@@ -25,10 +25,28 @@ export default {
       labels: ["Red", "Yellow", "Blue"],
     },
   }),
+  computed: {
+    investSummary() {
+      return this.$store.getters.getShareItems.reduce((a,b) => a+b.total);
+    },
+    shareItemPercent() {
+      let percents = []
+      let labels = []
+      for(let el in this.$store.getters.getShareItems) {
+        percents.push(el.total/(this.investSummary/100))
+        labels.push(el.ticker)
+      }
+      return { percents, labels }
+    }
+  },
   components: {
     ShareTable,
     PieChart,
   },
+  mounted() {
+    this.dataChart.datasets[0].data = this.shareItemPercent.percents
+    this.dataChart.labels = this.shareItemPercent.percents
+  }
 };
 </script>
 
