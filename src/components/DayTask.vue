@@ -9,12 +9,12 @@
             <v-icon>mdi-pencil</v-icon>
           </v-btn>
           <span class="timer ml-auto display-1">{{ task.time }}</span>
-          <template v-slot:activator='{ on, attrs }'>
+          <template>
             <v-btn icon class="ml-3" @click="deleteTaskById(task.id)">
               <v-icon>mdi-close</v-icon>
             </v-btn>
           </template>
-          <v-form class="headline green rounded-sm">
+          <v-form v-if="form" class="headline green rounded-sm">
             <v-row class="mx-1">
               <v-col>
                 <v-text-field
@@ -46,7 +46,7 @@
             </v-row>
             <v-row class="pb-2">
               <v-btn width="90%" @click.prevent="addTask" class="d-block mx-auto"
-                >Add task</v-btn
+                >fix task</v-btn
               >
             </v-row>
           </v-form>
@@ -62,8 +62,12 @@ export default {
   props: {
     task: {
       required: true
-    }
+    },
+    tagStr: null
   },
+  data: () => ({
+    form: false
+  }),
   computed: {
     tag() {
       return this.task.tags.join(", ");
@@ -75,8 +79,9 @@ export default {
       this.$store.dispatch("saveTasks");
     },
     editDayTask(id) {
+      this.form = !this.form
       console.log(id)
-    }
+    },
   }
 };
 </script>
