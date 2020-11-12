@@ -55,10 +55,14 @@ export default {
       );
     },
     setIncome(state, payload) {
-      state.incomeCategories = payload;
+      if(payload) {
+        state.incomeCategories = payload;
+      }
     },
     setOutcome(state, payload) {
-      state.outcomeCategories = payload;
+      if(payload) {
+        state.outcomeCategories = payload;
+      }
     },
     addIncome(state, payload) {
       state.incomeCategories.push(payload);

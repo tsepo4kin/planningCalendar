@@ -4,7 +4,9 @@ export default {
   },
   mutations: {
     setShareItems(state, payload) {
-      state.shareItems = payload;
+      if(payload) {
+        state.shareItems = payload;
+      }
     },
     deleteShareItem(state, payload) {
       state.shareItems = state.shareItems.filter(e => e.id !== payload);

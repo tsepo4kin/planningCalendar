@@ -1,11 +1,12 @@
 export default {
   state: {
     habits: [],
-    isLocal: true
   },
   mutations: {
     setHabits(state, payload) {
-      state.habits = payload;
+      if(payload) {
+        state.habits = payload;
+      }
     },
     deleteHabit(state, payload) {
       state.habits = state.habits.filter(e => e.id !== payload);

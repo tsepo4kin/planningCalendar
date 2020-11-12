@@ -29,15 +29,13 @@ export default {
         id: "QZXCb12k",
         tags: ["daily", "resp"]
       }
-    ],
-    isLocal: true
+    ]
   },
   mutations: {
     setTasks(state, payload) {
-      state.tasks = payload;
-    },
-    localToggle(state) {
-      state.isLocal = !state.isLocal;
+      if(payload) {
+        state.tasks = payload;
+      }
     },
     deleteTask(state, payload) {
       state.tasks = state.tasks.filter(e => e.id !== payload);
@@ -57,26 +55,25 @@ export default {
   actions: {
     saveTasks({ state }) {
       if (state.isLocal) {
-        localStorage.setItem("tasks", JSON.stringify(state.tasks));
+        //localstorage save
       } else {
         //save in database
       }
+      localStorage.setItem("tasks", JSON.stringify(state.tasks));
     },
     setTasks({ commit, state }) {
       if (state.isLocal) {
-        commit("setTasks", JSON.parse(localStorage.getItem("tasks")));
+        //localstorage save
       } else {
         //set from database
       }
+      commit("setTasks", JSON.parse(localStorage.getItem("tasks")));
     },
     addTask({ commit }, payload) {
       commit("addTask", payload);
     },
     deleteTaskById({ commit }, payload) {
       commit("deleteTask", payload);
-    },
-    localToggle({ commit }) {
-      commit("localToggle");
     },
     editTaskById({commit}, payload) {
       commit('editTask', payload)

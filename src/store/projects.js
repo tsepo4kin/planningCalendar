@@ -11,7 +11,9 @@ export default {
   },
   mutations: {
     setProjects(state, payload) {
-      state.projects = payload;
+      if(payload) {
+        state.projects = payload;
+      }
     },
     deleteProject(state, payload) {
       state.projects = state.projects.filter(e => e.id !== payload);

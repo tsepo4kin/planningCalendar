@@ -3,7 +3,8 @@ export default {
   state: {
     user: {
       isAuth: false,
-      uid: null
+      uid: null,
+      isLocal: true
     }
   },
   mutations: {
@@ -12,6 +13,9 @@ export default {
     },
     UnsetUser(state) {
       (state.user.isAuth = false), (state.user.uid = null);
+    },
+    localToggle(state) {
+      state.isLocal = !state.isLocal;
     }
   },
   actions: {
@@ -54,6 +58,9 @@ export default {
       } else {
         commit("UnsetUser");
       }
+    },
+    localToggle({ commit }) {
+      commit("localToggle");
     }
   },
   getters: {
