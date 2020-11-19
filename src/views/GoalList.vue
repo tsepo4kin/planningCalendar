@@ -69,34 +69,47 @@ export default {
       title: null,
       date: null,
       goalPoints: [],
-      pointsCount: 1
+      pointsCount: 1,
+      id: null,
     },
-    goals: [
-      {
-        title: "test title",
-        date: "02.01.2021",
-        goalPoints: ["todo1", "todo2", "todo3"],
-        pointsCount: 3
-      }
-    ]
   }),
   components: {
-    Goal
+    Goal,
+  },
+  computed: {
+    goals() {
+      return this.$store.getters.getGoals;
+    },
   },
   methods: {
     addGoal() {
-      this.goals.push(this.addedGoal);
+      this.addGoal.id = this.generateId();
+      this.$store.dispatch("addGoal", this.addedGoal);
       this.addedGoal = {
         title: null,
         date: null,
         goalPoints: [],
-        pointsCount: 1
+        pointsCount: 1,
+        id: null,
       };
+      this.$store.dispatch("saveGoals");
     },
     addPoint() {
       this.addedGoal.pointsCount++;
-    }
-  }
-  //
+    },
+    generateId() {
+      const str =
+        "1234567890qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+      const length = 8;
+      let res = "";
+      for (let i = 0; i < length; i++) {
+        res += str[Math.round(Math.random() * str.length)];
+      }
+      return res;
+    },
+  },
+  created() {
+    this.$store.dispatch("setGoals");
+  },
 };
 </script>

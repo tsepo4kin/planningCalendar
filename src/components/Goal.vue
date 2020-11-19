@@ -33,7 +33,8 @@ export default {
   },
   methods: {
     deleteGoal() {
-      console.log(1);
+      this.$store.dispatch("deleteGoalById", this.goal.id)
+      this.$store.dispatch('saveGoals');
     },
     openGoal() {
       console.log(2);

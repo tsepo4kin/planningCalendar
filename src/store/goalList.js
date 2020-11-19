@@ -37,7 +37,7 @@ export default {
       state.goals = state.goals.map( e => {
         if(e.id == payload.id) {
           e = payload
-        } 
+        }
         return e
       })
     }
@@ -70,6 +70,6 @@ export default {
     }
   },
   getters: {
-    getGoals: state => state.tasks
+    getGoals: state => state.goals
   }
 };
