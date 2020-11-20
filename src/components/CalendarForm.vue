@@ -22,7 +22,15 @@ export default {
   data: ()=> ({
     currentAge: null,
     plannigAge: null
-  })
+  }),
+  computed: {
+    weeksCalc() {
+      if(this.currentAge && this.plannigAge) {
+        //calcWeeks
+      }
+      return 0;
+    }
+  }
 }
 </script>
 
