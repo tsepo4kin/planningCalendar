@@ -9,6 +9,7 @@
           <v-text-field
             v-model="description"
             placeholder="Habit description"
+            color="black"
           ></v-text-field>
         </v-col>
         <v-col>
