@@ -1,6 +1,7 @@
 <template>
   <v-form>
     <v-text-field
+      @change='onChangeCurr'
       v-model="currentAge"
       label="Current Age"
       required
@@ -8,6 +9,7 @@
       outlined
     ></v-text-field>
     <v-text-field
+      @change='onChangePlan'
       v-model="plannigAge"
       label="Plannig Age"
       required
@@ -23,12 +25,13 @@ export default {
     currentAge: null,
     plannigAge: null
   }),
-  computed: {
-    weeksCalc() {
-      if(this.currentAge && this.plannigAge) {
-        //calcWeeks
-      }
-      return 0;
+  methods: {
+    onChangeCurr() {
+      console.log(1)
+      this.$store.dispatch('setCurrAge', this.currentAge)   
+    },
+    onChangePlan() {
+      this.$store.dispatch('setPlanAge', this.plannigAge) 
     }
   }
 }

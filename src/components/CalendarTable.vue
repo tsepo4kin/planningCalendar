@@ -15,20 +15,29 @@
         >
       </v-col>
     </v-row>
-    <calendar-year-in-week
-      :year="i"
-      v-for="i in 80"
-      :key="i + 'year'"
-    ></calendar-year-in-week>
+    <v-row>
+      {{getCurrAge}} - curr Age
+      {{getPlanAge}} - plan Age
+    </v-row>
   </div>
 </template>
 
 <script>
-import CalendarYearInWeek from "./CalendarYearInWeek";
 
 export default {
   components: {
-    CalendarYearInWeek
+  },
+  data: () => ({
+    currentAge: null,
+    planningAge: null
+  }),
+  computed: {
+    getCurrAge() {
+      return this.$store.getters.getCurrentAge
+    },
+    getPlanAge() {
+      return this.$store.getters.getPlanningAge
+    }
   }
 };
 </script>

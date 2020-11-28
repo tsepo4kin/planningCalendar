@@ -7,7 +7,8 @@ import CashRecordModule from "./cashRecord";
 import InvestmentsModule from "./investments";
 import ProjectsModule from "./projects";
 import HabitsModule from "./habits";
-import GoalListModule from "./goalList"
+import GoalListModule from "./goalList";
+import CalendarModule from "./calendar"
 
 Vue.use(Vuex);
 
@@ -20,6 +21,7 @@ export default new Vuex.Store({
     InvestmentsModule,
     ProjectsModule,
     HabitsModule,
-    GoalListModule
+    GoalListModule,
+    CalendarModule
   }
 });
