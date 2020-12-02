@@ -15,9 +15,21 @@
         >
       </v-col>
     </v-row>
-    <v-row>
-      {{getCurrAge}} - curr Age
-      {{getPlanAge}} - plan Age
+    <v-row v-for="year in getCurrAge" :key="year + 'curr years'" style="padding-left: 20px">
+      <v-col v-for="i in 52" :key="i + 'week from curr age'" style="margin:1px; padding: 0; width: 12px; height: 12px">
+        <span
+          class="d-block"
+          style="margin: 1px; width: 10px; height: 10px; background-color: red;"
+          ></span>
+      </v-col>
+    </v-row>
+    <v-row v-for="year in getPlanAge-getCurrAge" :key="year + 'plan years'" style="padding-left: 20px">
+      <v-col v-for="i in 52" :key="i + 'week from plan age'" style="margin:1px; padding: 0; width: 12px; height: 12px">
+        <span
+          class="d-block"
+          style="margin: 1px; width: 10px; height: 10px; background-color: white;"
+          ></span>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -33,10 +45,10 @@ export default {
   }),
   computed: {
     getCurrAge() {
-      return this.$store.getters.getCurrentAge
+      return parseInt(this.$store.getters.getCurrentAge)
     },
     getPlanAge() {
-      return this.$store.getters.getPlanningAge
+      return parseInt(this.$store.getters.getPlanningAge)
     }
   }
 };
