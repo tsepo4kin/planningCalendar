@@ -16,6 +16,13 @@
       dark
       outlined
     ></v-text-field>
+    <v-text-field
+      v-model="birthDate"
+      label="Birth date"
+      required
+      dark
+      outlined
+    ></v-text-field>
   </v-form>
 </template>
 
@@ -23,7 +30,8 @@
 export default {
   data: ()=> ({
     currentAge: null,
-    plannigAge: null
+    plannigAge: null,
+    birthDate: null
   }),
   methods: {
     onChangeCurr() {
