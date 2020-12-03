@@ -29,6 +29,6 @@ export default {
   getters: {
     getCurrentAge: state => state.currentAge,
     getPlanningAge: state => state.planningAge,
-    getBithDate: state => state.birthDate
+    getBirthDate: state => state.birthDate
   }
 }

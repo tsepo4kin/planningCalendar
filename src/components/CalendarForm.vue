@@ -17,6 +17,7 @@
       outlined
     ></v-text-field>
     <v-text-field
+      @change='onChangeBirthDate'
       v-model="birthDate"
       label="Birth date"
       required
@@ -35,11 +36,13 @@ export default {
   }),
   methods: {
     onChangeCurr() {
-      console.log(1)
       this.$store.dispatch('setCurrAge', this.currentAge)   
     },
     onChangePlan() {
       this.$store.dispatch('setPlanAge', this.plannigAge) 
+    },
+    onChangeBirthDate() {
+      this.$store.dispatch('setBirthDate', this.birthDate)
     }
   }
 }

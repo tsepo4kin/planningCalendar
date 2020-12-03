@@ -63,7 +63,17 @@ export default {
     },
     getPlanAge() {
       return parseInt(this.$store.getters.getPlanningAge)
+    },
+    peekWeeks() {
+      // let birthDate = this.$store.gettres.getBirthDate
+      // let todayDate = '03.12.20'
+      // console.log(birthDate, todayDate)
+      return 1
+    },
+    unPeekWeeks() {
+      return 52-1
     }
+
   }
 };
 </script>
