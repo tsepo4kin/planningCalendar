@@ -27,13 +27,13 @@
       <v-col v-for="i in peekWeeks" :key="i + 'peek week from curr year'" style="margin:1px; padding: 0; width: 12px; height: 12px">
         <span
           class="d-block"
-          style="margin: 1px; width: 10px; height: 10px; background-color: white;"
+          style="margin: 1px; width: 10px; height: 10px; background-color: green;"
           ></span>
       </v-col>
       <v-col v-for="i in unPeekWeeks" :key="i + 'unpeek week from curr year'" style="margin:1px; padding: 0; width: 12px; height: 12px">
         <span
           class="d-block"
-          style="margin: 1px; width: 10px; height: 10px; background-color: white;"
+          style="margin: 1px; width: 10px; height: 10px; background-color: gray;"
           ></span>
       </v-col>
     </v-row>

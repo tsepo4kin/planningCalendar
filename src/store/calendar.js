@@ -1,7 +1,8 @@
 export default {
   state: {
     currentAge: null,
-    planningAge: null
+    planningAge: null,
+    birthDate: null
   },
   mutations: {
     setCurrAge(state, payload) {
@@ -9,6 +10,9 @@ export default {
     },
     setPlanAge(state, payload) {
       state.planningAge = payload
+    },
+    setBirthDate(state, payload) {
+      state.birthDate = payload
     }
   },
   actions: {
@@ -17,10 +21,14 @@ export default {
     },
     setPlanAge({commit}, payload) {
       commit('setPlanAge', payload)
+    },
+    setBirthDate({commit}, payload) {
+      commit('setBirthDate', payload)
     }
   },
   getters: {
     getCurrentAge: state => state.currentAge,
-    getPlanningAge: state => state.planningAge
+    getPlanningAge: state => state.planningAge,
+    getBithDate: state => state.birthDate
   }
 }
